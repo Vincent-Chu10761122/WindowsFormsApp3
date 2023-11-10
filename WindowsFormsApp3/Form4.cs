@@ -89,24 +89,6 @@ namespace WindowsFormsApp3
                     }
                 }
 
-                if(chart1.Series["電量"].Points.Count > 25)
-                {
-                    double xMin = chart1.Series["電量"].Points[chart1.Series["電量"].Points.Count - 25].XValue;
-                    double xMax = chart1.Series["電量"].Points[chart1.Series["電量"].Points.Count - 1].XValue;
-
-                    chart1.ChartAreas[0].AxisX.Minimum = xMin;
-                    chart1.ChartAreas[0].AxisX.Maximum = xMax;
-                }
-
-                if (chart1.Series["電量"].Points.Count > 10)
-                {
-                    double yMin = chart1.Series["電量"].Points[chart1.Series["電量"].Points.Count - 10].YValues[0];
-                    double yMax = chart1.Series["電量"].Points[chart1.Series["電量"].Points.Count - 1].YValues[0];
-
-                    chart1.ChartAreas[0].AxisX.Minimum = yMin;
-                    chart1.ChartAreas[0].AxisX.Maximum = yMax;
-                }
-
                 //設定X軸Label的間隔 : 2023/11/10 每分鐘顯示一個
                 chart1.ChartAreas[0].AxisX.IntervalType = DateTimeIntervalType.Minutes;
                 chart1.ChartAreas[0].AxisX.Interval = 1;
